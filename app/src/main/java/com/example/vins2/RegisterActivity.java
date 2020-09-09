@@ -42,8 +42,6 @@ public class RegisterActivity extends AppCompatActivity {
         final EditText editTextTextPersonName4 = (EditText) findViewById(R.id.editTextTextPersonName4);
 
         RequestQueue queue = Volley.newRequestQueue(this);
-
-
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -74,9 +72,7 @@ public class RegisterActivity extends AppCompatActivity {
                                                 .show();
                                     }
                                 }
-                        )
-                {
-                };
+                        );
                 queue.add(jsonObjectRequest);
             }
         });

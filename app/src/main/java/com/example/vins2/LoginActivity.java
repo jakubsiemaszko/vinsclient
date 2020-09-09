@@ -17,7 +17,6 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.squareup.okhttp.OkHttpClient;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -59,8 +58,15 @@ public class LoginActivity extends AppCompatActivity {
                         {
                             @Override
                             public void onResponse(String response) {
-                                Intent intent = new Intent(LoginActivity.this, UserAreaActivity.class);
-                                LoginActivity.this.startActivity(intent);
+                                try {
+                                    JSONObject jsonResponse = new JSONObject(response);
+                                    String access_token = jsonResponse.getString("access_token");
+                                    Intent intent = new Intent(LoginActivity.this, UserAreaActivity.class);
+                                    intent.putExtra("access_token", access_token);
+                                    LoginActivity.this.startActivity(intent);
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
                             }
                         },
                         new Response.ErrorListener()
