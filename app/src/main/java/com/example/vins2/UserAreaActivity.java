@@ -15,14 +15,13 @@ public class UserAreaActivity extends AppCompatActivity {
         setContentView(R.layout.activity_user_area);
 
         final EditText editTextTextEmailAddress = (EditText) findViewById(R.id.editTextTextEmailAddress);
-        final EditText editTextTextPassword = (EditText) findViewById(R.id.editTextTextPassword);
-        //final TextView welcomeMessage = (TextView) findViewById(R.id.)
+        final TextView textView3 = (TextView) findViewById(R.id.textView3);
 
-        Intent intent = getIntent();
-        String email = intent.getStringExtra("email");
+        //Intent intent = getIntent();
+        //String email = intent.getStringExtra("email");
 
-        String message = email + " witaj w swoim panelu użytkownika";
+        //String message = email + " witaj w swoim panelu użytkownika";
         //welcomeMessage.setText(message);
-        editTextTextEmailAddress.setText(email);
+        //editTextTextEmailAddress.setText(email);
     }
 }
