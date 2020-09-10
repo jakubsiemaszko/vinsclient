@@ -54,12 +54,13 @@ public class UserAreaActivity extends AppCompatActivity {
                         try {
                             String email  = response.getString("email");
                             String full_name = response.getString("full_name");
-                            String points = response.getString("points");
+                            int points = response.getInt("points");
                             String id = response.getString("id");
+                            int free = points/10;
                             Email.setText(email);
                             FullName.setText(full_name);
                             Stamps.setText(points);
-                            //FreeProducts.setText();
+                            FreeProducts.setText(free);
                             Bitmap bitmap;
                             ImageView QR;
                             QR = (ImageView)findViewById(R.id.imageViewQR);
